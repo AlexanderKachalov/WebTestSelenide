@@ -15,7 +15,9 @@ ___
 ___
 * Тестируемая форма (1) и отображение скрытой формы (2) при успешной регистрации:
 ---
-1 ![](Pictures/Pictures_1_Initial_Form.png)
+            1 - тестирумая форма
+![](Pictures/Pictures_1_Initial_Form.png)
 
 ---
-2 ![](Pictures/Pictures_2_Visible_Hidden_Form.png)
+            2 - отображение скрытой формы
+![](Pictures/Pictures_2_Visible_Hidden_Form.png)

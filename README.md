@@ -13,4 +13,6 @@ ___
 * Выполнить команду `./gradlew test` (`./gradlew.bat test` для Windows)
 * Отчет о выполнении тестов в директории `build/reports/tests/test`
 ___
-* Тестируемая форма:
+* Тестируемая форма (1) и отображение скрытой формы (2) при успешной регистрации:
+1. ![](Pictures/Pictures_1_Initial_Form.png)
+1. ![](Pictures/Pictures_2_Visible_Hidden_Form.png)

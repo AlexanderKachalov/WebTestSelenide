@@ -1,17 +1,12 @@
 
 import com.codeborne.selenide.SelenideElement;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-import java.time.LocalDate;
-
 public class TestClass {
     private SelenideElement form;
-    private LocalDate date = LocalDate.now();
-    private int day = date.getDayOfMonth();
 
     @Test
     void testFormIfValidateAllInputData() {
@@ -43,7 +38,7 @@ public class TestClass {
 
     private void inputData () {
         form.$("[data-test-id=date]").click();
-        form.$(By.xpath("//*[text()='" + (day + 5) + "']")).click();
+        form.$(By.xpath("//*[text()='" + 20 + "']")).click();
     }
 
     private void formClick() {

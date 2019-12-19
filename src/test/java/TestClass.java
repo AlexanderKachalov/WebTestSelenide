@@ -14,15 +14,14 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestClass {
     private SelenideElement form;
-//    LocalDate date = LocalDate.now();
 
     @Test
     void testFormIfValidateAllInputData() {
         openForm();
         inputCityName("Волгоград");
+        inputData(10);
         inputNameUser("Василий");
         inputPhoneNumber("+79035783484");
-        inputData();
         formClick();
         $("[data-test-id=notification]").waitUntil(visible, 15000);
     }
@@ -44,17 +43,15 @@ public class TestClass {
         form.$("[data-test-id=phone] input").setValue(phone);
     }
 
-    private void inputData () {
-        LocalDate date = LocalDate.now().plusDays(3);
-        String day = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(date);
-        LocalDate dates = LocalDate.now().plusDays(25);
+    private void inputData (int plusDays) {
+        LocalDate dates = LocalDate.now().plusDays(plusDays);
         String futureDay = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(dates);
+//        String futureDay = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(dates);
         form.$("[placeholder='Дата встречи']").sendKeys("\b\b\b\b\b\b\b\b\b\b");
-  //      form.$("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        String currentDay = form.$("[placeholder='Дата встречи']").getValue();
+//        form.$("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+        form.$("[placeholder='Дата встречи']").sendKeys(Keys.BACK_SPACE);
         form.$("[placeholder='Дата встречи']").setValue(futureDay).click();
-        System.out.println("currentDay = " + currentDay);
-        System.out.println("futureDay = " + futureDay);
+
     }
 
     private void formClick() {

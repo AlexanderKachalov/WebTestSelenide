@@ -49,7 +49,6 @@ public class TestClass {
 //        String futureDay = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(dates);
         form.$("[placeholder='Дата встречи']").sendKeys("\b\b\b\b\b\b\b\b\b\b");
 //        form.$("[placeholder='Дата встречи']").sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
-        form.$("[placeholder='Дата встречи']").sendKeys(Keys.BACK_SPACE);
         form.$("[placeholder='Дата встречи']").setValue(futureDay).click();
 
     }
